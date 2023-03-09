@@ -102,6 +102,13 @@ class _HomePageState extends State<HomePage> {
                         ]),
                   );
                 }),
+          ),
+          // indicator
+          SizedBox(
+            height: size.height * 1 / 10,
+            child: ListView.builder(itemBuilder: (context, index) {
+              return _indicatorWidget(index == 0, size);
+            }),
           )
         ]),
       ),
@@ -112,4 +119,16 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+Widget _indicatorWidget(bool isActive, Size size) {
+  return Container(
+    width: isActive ? size.width * 1 / 5 : 24,
+    decoration: BoxDecoration(
+        color: isActive ? AppColors.lightBlue : AppColors.lightGrey,
+        borderRadius: const BorderRadius.all(Radius.circular(12)),
+        boxShadow: const [
+          BoxShadow(color: Colors.black38, offset: Offset(2, 3), blurRadius: 3),
+        ]),
+  );
 }

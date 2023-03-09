@@ -43,7 +43,7 @@ class IntroPage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(bottom: 64),
               child: RawMaterialButton(
-                fillColor: AppColors.lighBlue,
+                fillColor: AppColors.lightBlue,
                 shape: const CircleBorder(),
                 onPressed: () {
                   Navigator.pushAndRemoveUntil(
